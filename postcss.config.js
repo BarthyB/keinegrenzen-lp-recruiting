@@ -4,6 +4,9 @@ module.exports = {
     'autoprefixer': {},
     'postcss-discard-comments': {},
     'css-mqpacker': {},
-    'cssnano': {}
+    'cssnano': {
+      reduceIdents: false,
+      zindex: false
+    }
   }
 }
