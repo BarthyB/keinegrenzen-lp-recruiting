@@ -9,6 +9,8 @@
 namespace App\Service;
 
 
+use Exception;
+
 class NameParser
 {
 
@@ -27,45 +29,52 @@ class NameParser
         $this->name = str_ireplace("-", " ", $this->name);
     }
 
-    public function parseName()
+    /**
+     * @param string $name
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function parseName(string $name): string
     {
+        $this->name = $name;
+
         $this->sanitize();
         $this->decode();
         $this->multiLine();
+
+        return $this->getNameForRendering();
     }
 
     private function multiLine(): void
     {
         $nameArray = [];
-        $space = strpos($this->name, " ");
+        $space = strpos($this->name, ' ');
 
         while ($space !== false) {
             if ($space >= 8) {
                 $nameArray[] = substr($this->name, 0, $space);
                 $this->name = substr($this->name, $space + 1);
-                $space = strpos($this->name, " ");
+                $space = strpos($this->name, ' ');
             } else {
-                $space = strpos($this->name, " ", $space + 1);
+                $space = strpos($this->name, ' ', $space + 1);
             }
         }
 
         $nameArray[] = $this->name;
-        $this->name = implode("<br>", $nameArray);
+        $this->name = implode('<br/>', $nameArray);
     }
 
     /**
      * @return string
+     * @throws \Exception
      */
     public function getNameForRendering(): string
     {
-        return $this->name;
-    }
+        if ($this->name === null) {
+            throw new Exception('Name must be parsed first. Use Nameparser::parseName.');
+        }
 
-    /**
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
+        return $this->name;
     }
 }
