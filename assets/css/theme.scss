@@ -641,9 +641,9 @@ nav + .container {
     }
 
     @media screen and (max-width: $break-medium) {
-      align-items: start;
+      align-items: flex-start;
       flex-direction: column;
-      justify-content: start;
+      justify-content: flex-start;
     }
   }
 
@@ -915,9 +915,21 @@ footer {
 
     .origin {
       align-self: end;
-      font-weight: $font-weight-black;
-      line-height: 2;
       margin-top: auto;
+
+      .open-source {
+        font-weight: $font-weight-thin;
+
+        a {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .vincinity {
+        font-weight: $font-weight-black;
+        line-height: 2;
+      }
     }
 
     .icon {
