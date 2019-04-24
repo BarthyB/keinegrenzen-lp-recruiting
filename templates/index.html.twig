@@ -1,5 +1,9 @@
 {% import 'icons/macro.html.twig' as icon %}
 
+{% set description = 'Eine Musikplattform, bei der jeder gewinnt: die K&uuml;nstler und Bands erhalten Aufmerksamkeit, die Benutzer k&ouml;nnen Musik kostenlos downloaden. Und die Kirsche auf der Torte: Menschen in Not wirdgeholfen, durch unsere Spenden an &Auml;rzte ohne Grenzen.' %}
+{% set title = 'Mitmachen bei keinegrenzen.org — Gute Musik f&uuml;r einen guten Zweck' %}
+{% set image = 'https://mitmachen.keinegrenzen.org/images/guitar-player.png' %}
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -7,7 +11,36 @@
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
         >
-        <title>{% block title %}Mitmachen bei keinegrenzen.org — Gute Musik für einen guten Zweck{% endblock %}</title>
+
+        <meta property="og:title"
+              content="{{ title|raw }}"
+        >
+        <meta property="og:type"
+              content="website"
+        >
+        <meta property="og:description"
+              content="{{ description|raw }}"
+        >
+        <meta property="og:url"
+              content="https://festival.keinegrenzen.org"
+        >
+        <meta property="og:image"
+              content="{{ image }}"
+        >
+        <meta property="og:image:width"
+              content="684"
+        />
+        <meta property="og:image:height"
+              content="342"
+        />
+        <meta property="og:locale"
+              content="de_DE"
+        />
+        <meta property="fb:app_id"
+              content="634148010083648"
+        />
+
+        <title>{% block title %}{{ title }}{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('css/theme') }}
         {% endblock %}
@@ -177,7 +210,7 @@
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 1920 688"
             >
-                <title>Gute Musik für einen guten Zweck</title>
+                <title>Gute Musik f&uuml;r einen guten Zweck</title>
                 <g id="gute_musik_guter_zweck">
                     <g id="bg_top">
                         <polygon class="cls-1"
@@ -195,7 +228,9 @@
                                x="335.89"
                                y="0"
                                xml:space="preserve"
-                        > MUSIK</tspan>
+                        >
+                            MUSIK
+                        </tspan>
                     </text>
                     <g id="bg_bottom_right">
                         <polygon class="cls-2"
@@ -212,7 +247,8 @@
                         <tspan class="cls-7"
                                x="472.59"
                                y="0"
-                        >ZWECK
+                        >
+                            ZWECK
                         </tspan>
                     </text>
                     <polygon id="bg_bottom_left"
@@ -248,13 +284,14 @@
                     </g>
                     <text class="cls-8"
                           transform="translate(729.97 486.32) rotate(-9)"
-                    >FÜR EINEN
+                    >
+                        F&Uuml;R EINEN
                     </text>
                 </g>
             </svg>
         </div>
         <div class="guitar-player container">
-            <img src="{{ asset('/images/guitar-player.png') }}"
+            <img src="{{ asset('images/guitar-player.png') }}"
                  title="Gitarrist"
                  alt="Gitarrist Live auf der B&uuml;hne"
             >
@@ -265,7 +302,7 @@
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 1981 834"
             >
-                <title>Wie wäre das</title>
+                <title>Wie w&auml;re das</title>
                 <g id="wie_waere_das">
                     <polygon id="red"
                              class="cls-1"
@@ -290,7 +327,7 @@
                         <tspan xml:space="preserve">    WIE</tspan>
                         <tspan x="0"
                                y="246"
-                        >WÄRE
+                        >W&Auml;RE
                         </tspan>
                         <tspan class="cls-5"
                                x="0"
@@ -344,11 +381,8 @@
             <div class="inner">
                 <p>
                     Eine Musikplattform, bei der jeder gewinnt: die K&uuml;nstler und Bands erhalten Aufmerksamkeit, die
-                    Benutzer
-                    k&ouml;nnen Musik kostenlos downloaden. Und die Kirsche auf der Torte: Menschen in Not wird
-                    geholfen,
-                    durch
-                    unsere Spenden an &Auml;rzte ohne Grenzen.
+                    Benutzer k&ouml;nnen Musik kostenlos downloaden. Und die Kirsche auf der Torte: Menschen in Not wird
+                    geholfen, durch unsere Spenden an &Auml;rzte ohne Grenzen.
                 </p>
             </div>
         </section>
@@ -381,7 +415,7 @@
         <div class="stats-prelude container"
              id="wer-macht-mit"
         >
-            <a href="#ressourcen">Jetzt Mitmachen</a>
+            <a href="#was-brauchen-wir">Jetzt Mitmachen</a>
         </div>
         <div class="stats container">
             <div class="inner">
@@ -473,13 +507,14 @@
                 <p>
                     Barth&eacute;l&eacute;my Bonhomme<br>
                     Drosselweg 22<br>
-                    50735 Köln<br>
+                    50735 K&ouml;ln<br>
                     Deutschland<br>
                     E-Mail: kontakt@keinegrenzen.org<br>
                     Tel:
                     <a href="tel:+4917630594643"
                        title="Kontakt aufnehmen"
-                    >+49 176 30594643
+                    >
+                        +49 176 30594643
                     </a>
                     <br>
                 </p>
@@ -487,6 +522,15 @@
             <div class="notices section">
                 <p class="copyright">
                     &copy; 2016-{{ "now"|date("Y") }} Barth&eacute;l&eacute;my Bonhomme
+                </p>
+                <p>
+                    <a href="https://github.com/keinegrenzen-org"
+                       target="_blank"
+                       rel="nofollow noopener"
+                    >
+                        keinegrenzen ist open source!
+                    </a>
+                    Hilf uns, etwas großartiges zu erschaffen.
                 </p>
                 <p class="origin">
                     Mit <span>{{ icon.render('smile', 'blue') }} <i class="sr-only">Leidenschaft</i></span>
