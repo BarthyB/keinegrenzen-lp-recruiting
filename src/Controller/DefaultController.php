@@ -22,10 +22,17 @@ class DefaultController extends AbstractController
     {
         $parsedName = $nameParser->parseName($name);
 
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, 'https://keinegrenzen.org/artist-count');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($curl);
+        $artistCount = intval($output);
+
         return $this->render(
             'index.html.twig',
             [
-                'name' => $parsedName,
+                'name'        => $parsedName,
+                'artistCount' => $artistCount,
             ]
         );
     }

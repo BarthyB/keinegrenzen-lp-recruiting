@@ -290,7 +290,7 @@
             </svg>
         </div>
         <div class="guitar-player container">
-            <img src="{{ asset('images/guitar-player.png') }}"
+            <img src="{{ asset('/images/guitar-player.png') }}"
                  title="Gitarrist"
                  alt="Gitarrist Live auf der B&uuml;hne"
             >
@@ -418,17 +418,21 @@
         </div>
         <div class="stats container">
             <div class="inner">
-                <p>
-                    <span class="number">23</span>
+                <a href="https://keinegrenzen.org#kuenstler"
+                   rel="nofollow noopener"
+                >
+                    <span class="number">{{ artistCount }}</span>
                     <span class="description">K&uuml;stler<br>sind schon<br>dabei</span>
-                </p>
+                </a>
                 <p class="and">
                     &amp;
                 </p>
-                <p>
-                    <span class="number">657</span>
+                <a href="https://www.facebook.com/keinegrenzenOrg"
+                   rel="nofollow noopener"
+                >
+                    <span class="number">461</span>
                     <span class="description">Menschen<br>lieben<br>es</span>
-                </p>
+                </a>
             </div>
         </div>
         <div class="vinyl container">
