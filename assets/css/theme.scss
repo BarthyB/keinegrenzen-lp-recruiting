@@ -11,8 +11,12 @@ body {
   font-family: "Fivo Sans", sans-serif;
   font-size: 16px;
   margin: 0;
-  max-width: 100%;
   width: 100%;
+}
+
+body {
+  max-width: 1920px;
+  margin: auto;
 }
 
 @media all and (max-width: 576px) {
@@ -75,6 +79,7 @@ p {
 
 .container {
   width: 100%;
+  max-width: 1920px;
 }
 
 .section-wrapper {
@@ -101,17 +106,21 @@ p {
 }
 
 .fixed-nav {
-  left: 0;
+  display: flex;
   position: fixed;
   top: 0;
   z-index: 1005;
+  max-width: 1920px;
+  width: 100%;
+
+  $nav-dimension: 75px;
 
   .menu,
   .contact-icon {
     display: block;
-    height: 75px;
+    height: $nav-dimension;
     padding: 1rem;
-    width: 75px;
+    width: $nav-dimension;
   }
 
   .menu {
@@ -154,11 +163,12 @@ p {
 
   .section-menu {
     background: url('../images/logo_bg.svg') repeat-x;
+    background-size: contain;
     transition: background-position .4s ease-in-out;
     z-index: 1010;
 
     @media screen and (max-width: $break-medium) {
-      width: 75px;
+      width: $nav-dimension;
     }
   }
 
@@ -168,14 +178,13 @@ p {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    position: fixed;
     right: 0;
     top: 0;
     transition: transform .4s ease-in-out;
     z-index: 1000;
 
     @media screen and (max-width: $break-medium) {
-      padding-left: 75px;
+      padding-left: $nav-dimension;
     }
   }
 
@@ -201,11 +210,11 @@ p {
     }
 
     .section-menu {
-      background-position-y: -75px;
+      background-position-y: -$nav-dimension;
     }
 
     .section-contact {
-      transform: translateY(-75px);
+      transform: translateY(-$nav-dimension);
     }
   }
 
@@ -379,7 +388,8 @@ nav + .container {
 
 .project-description {
   background: url('../images/project_description_bg.svg') repeat-y top left, url('../images/project_description_bg.svg') 0 10px repeat-y;
-  min-height: calc(100vw * .42);
+  height: 0;
+  padding-bottom: 42%;
   position: relative;
 
   svg {
@@ -430,7 +440,7 @@ nav + .container {
     color: $theme-white;
     font-size: 1.2 * $font-size-huge;
     line-height: 1.2;
-    padding: 8vw 25vw 8vw 35vw;
+    padding: 8% 25% 8% 35%;
     position: relative;
     width: 100%;
     word-break: break-word;
@@ -669,7 +679,7 @@ nav + .container {
 }
 
 .resources {
-  $before-inner-width: 20vw;
+  $before-inner-width: 20%;
   $title-height: 8rem;
   $title-offset-x: 5.6rem;
   $title-offset-y: 1.1rem;
@@ -686,7 +696,7 @@ nav + .container {
     left: 0;
     position: absolute;
     top: calc(-30vw + 1px);
-    width: 5vw;
+    width: 5%;
     z-index: 10;
   }
 
@@ -695,7 +705,7 @@ nav + .container {
     content: ' ';
     display: block;
     height: 100%;
-    left: 5vw;
+    left: 5%;
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -713,10 +723,10 @@ nav + .container {
   .inner {
     background-color: $theme-blue;
     flex-wrap: wrap;
-    margin-left: 25vw;
+    margin-left: 25%;
     padding: (6rem + $title-height + $title-offset-y) 6rem 6rem;
     position: relative;
-    width: 75vw;
+    width: 75%;
 
     .title {
       left: -$title-offset-x;
@@ -877,8 +887,8 @@ footer {
   width: 100%;
 
   p {
-    font-size: $font-size-big;
-    line-height: 1.2;
+    font-size: $font-size-base;
+    line-height: 1.5;
     margin: 0;
   }
 
@@ -895,6 +905,10 @@ footer {
 
     .strong {
       font-weight: $font-weight-black;
+    }
+
+    a {
+      display: inline-flex;
     }
   }
 
@@ -913,23 +927,21 @@ footer {
       font-weight: $font-weight-thin;
     }
 
+    .open-source {
+      font-weight: $font-weight-thin;
+      align-self: center;
+      margin: auto;
+
+      a {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     .origin {
       align-self: end;
       margin-top: auto;
-
-      .open-source {
-        font-weight: $font-weight-thin;
-
-        a {
-          display: flex;
-          justify-content: center;
-        }
-      }
-
-      .vincinity {
-        font-weight: $font-weight-black;
-        line-height: 2;
-      }
+      line-height: 2;
     }
 
     .icon {
