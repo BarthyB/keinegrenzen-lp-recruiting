@@ -529,7 +529,7 @@ nav + .container {
     margin-bottom: -1px;
     margin-top: -1px;
     position: relative;
-    width: 100%;
+    width: 85%;
     z-index: 10;
   }
 }
@@ -823,6 +823,10 @@ nav + .container {
       padding-left: 2rem;
       padding-right: 0;
     }
+  }
+
+  .zip-link {
+    display: inline-flex;
   }
 }
 

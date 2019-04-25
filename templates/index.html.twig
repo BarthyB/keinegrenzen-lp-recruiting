@@ -2,7 +2,7 @@
 
 {% set description = 'Eine Musikplattform, bei der jeder gewinnt: die K&uuml;nstler und Bands erhalten Aufmerksamkeit, die Benutzer k&ouml;nnen Musik kostenlos downloaden. Und die Kirsche auf der Torte: Menschen in Not wirdgeholfen, durch unsere Spenden an &Auml;rzte ohne Grenzen.' %}
 {% set title = 'Mitmachen bei keinegrenzen.org — Gute Musik f&uuml;r einen guten Zweck' %}
-{% set image = 'https://mitmachen.keinegrenzen.org/images/guitar-player.png' %}
+{% set image = 'https://mitmachen.keinegrenzen.org/images/guitar-player.jpg' %}
 
 <!DOCTYPE html>
 <html lang="de">
@@ -290,7 +290,7 @@
             </svg>
         </div>
         <div class="guitar-player container">
-            <img src="{{ asset('/images/guitar-player.png') }}"
+            <img src="{{ asset('/images/guitar-player.jpg') }}"
                  title="Gitarrist"
                  alt="Gitarrist Live auf der B&uuml;hne"
             >
@@ -406,7 +406,7 @@
             </div>
         </div>
         <div class="street-artist container">
-            <img src="{{ 'images/street-artist.png' }}"
+            <img src="{{ '/images/street-artist.jpg' }}"
                  title="Vinyl"
                  alt="K&ouml;rbe voller Vinylplatten"
             >
@@ -436,7 +436,7 @@
             </div>
         </div>
         <div class="vinyl container">
-            <img src="{{ 'images/vinyl.png' }}"
+            <img src="{{ '/images/vinyl.jpg' }}"
                  title="Vinyl"
                  alt="K&ouml;rbe voller Vinylplatten"
             >
@@ -454,22 +454,22 @@
                 <div class="card section">
                     <span class="header-icon">{{ icon.render('note', 'red') }}</span>
                     <h3>Eure Musik</h3>
-                    <p>(1-3 Alben, EPs, LPs, Mixtapes, …) im mp3-Format</p>
+                    <p>(1-3 Alben, EPs, LPs, Mixtapes, …) im AAC-Format (oder falls nicht anders Möglich WAVE, AIFF oder mp3)</p>
                 </div>
                 <div class="card section">
                     <span class="header-icon">{{ icon.render('cover', 'red') }}</span>
                     <h3>Die Cover</h3>
-                    <p>Als jpg oder png (min 500px &times; 500px)</p>
+                    <p>Als JPEG (unkomprimiert) oder PNG (ohne Transparenz), min. 500px &times; 500px</p>
                 </div>
                 <div class="card section">
                     <span class="header-icon">{{ icon.render('person', 'red') }}</span>
                     <h3>Profilbild</h3>
-                    <p>Mit Menschen drauf, als jpg oder png (min 600px &times; 400px)</p>
+                    <p>Mit Menschen drauf, als JPEG (unkomprimiert) oder PNG (ohne Transparenz), min. 600px &times; 400px</p>
                 </div>
                 <div class="card section">
                     <span class="header-icon">{{ icon.render('image', 'red') }}</span>
                     <h3>Ein Bannerbild</h3>
-                    <p>Als jpg oder png (min 1920px &times; 1080px)</p>
+                    <p>Als JPEG (unkomprimiert) oder PNG (ohne Transparenz) (min 1920px &times; 1080px)</p>
                 </div>
                 <div class="card section">
                     <span class="header-icon">{{ icon.render('info', 'red') }}</span>
@@ -478,7 +478,11 @@
                 </div>
                 <p>
                     Der Einfachheit halber k&ouml;nnt Ihr
-                    <a href="FILE">{# TODO #}hier eine ZIP-Datei</a>
+                    <a href="{{ asset('/downloads/keinegrenzen-mitmach-paket.zip') }}"
+                       class="zip-link"
+                    >
+                        hier eine ZIP-Datei
+                    </a>
                     herunterladen, die Ihr entpacken, bef&uuml;llen, wieder verpacken und uns zusenden k&ouml;nnt.
                 </p>
             </div>
