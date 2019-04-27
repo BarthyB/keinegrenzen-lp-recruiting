@@ -3,6 +3,7 @@
 @import 'components/fonts';
 @import 'components/mixins';
 
+$break-large: 1240px;
 $break-medium: 992px;
 $break-small: 420px;
 
@@ -380,9 +381,17 @@ nav + .container {
 
 .project-description {
   background: url('../images/project_description_bg.svg') repeat-y top left, url('../images/project_description_bg.svg') 0 10px repeat-y;
-  height: 0;
-  padding-bottom: 42%;
   position: relative;
+
+  @media screen and (min-width: $break-medium) {
+    height: 0;
+    padding-bottom: 62%;
+  }
+
+  @media screen and (min-width: $break-large) {
+    height: 0;
+    padding-bottom: 42%;
+  }
 
   svg {
     font-family: "League Gothic", sans-serif;
