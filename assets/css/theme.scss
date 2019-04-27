@@ -182,10 +182,6 @@ p {
     top: 0;
     transition: transform .4s ease-in-out;
     z-index: 1000;
-
-    @media screen and (max-width: $break-medium) {
-      padding-left: $nav-dimension;
-    }
   }
 
   &.active {
@@ -211,10 +207,6 @@ p {
 
     .section-menu {
       background-position-y: -$nav-dimension;
-    }
-
-    .section-contact {
-      transform: translateY(-$nav-dimension);
     }
   }
 
